@@ -1,5 +1,12 @@
+import TodoContainer from 'containers/TodoContainer';
 import React from 'react';
+
 const App: React.FC<any> = () => {
-  return <div className="App">APP</div>;
+  return (
+    <div>
+      <TodoContainer />
+    </div>
+  );
 };
+
 export default App;
