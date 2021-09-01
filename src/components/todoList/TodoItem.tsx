@@ -16,15 +16,14 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onRemove, onUpdate, onToggle 
   const [isEdit, setIsEdit] = useState(false);
   const taskNameRef = useRef(null);
 
+  //수정 버튼을 누르면 입력창으로 focus가 됩니다.
   useEffect(() => {
     const updateTasKName = taskNameRef.current! as HTMLElement;
     if (updateTasKName) updateTasKName.focus();
   }, [isEdit]);
 
-  const handleRemove = () => {
-    if (window.confirm('정말 삭제하시겠습니까?')) onRemove(todo.id);
-  };
-
+  //수정 확인 버튼을 누르면 실행되는 함수입니다.
+  //수정하고, 입력값이 있어야 수정 됩니다.
   const handleEdit = () => {
     const updateTasKName = taskNameRef.current! as HTMLElement;
     const updateText = updateTasKName.innerText;
@@ -41,6 +40,12 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onRemove, onUpdate, onToggle 
     setIsEdit((prev) => !prev);
   };
 
+  //삭제할때 한 번 확인 하고 삭제합니다.
+  const handleRemove = () => {
+    if (window.confirm('정말 삭제하시겠습니까?')) onRemove(todo.id);
+  };
+
+  //완료를 체크합니다.
   const handleComplete = () => {
     onToggle(todo.id);
   };

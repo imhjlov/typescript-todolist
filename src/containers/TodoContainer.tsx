@@ -19,6 +19,7 @@ const TodoContainer: React.FC = () => {
     dispatch(createTodo(Todo));
   };
 
+  //데이터를 로드합니다.
   useEffect(() => {
     onLoad();
   }, []);

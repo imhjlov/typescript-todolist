@@ -13,10 +13,14 @@ const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
   const [inputTask, setInputTask] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
+  //저장 버튼을 누르면 실행 됩니다.
   const handleSave = () => {
     handleCreate();
   };
 
+  //입력값이 없으면 저장되지 않습니다.
+  //입력값이 있으면 저장
+  //저장 후 입력값 초기화, id 1 증가
   const handleCreate = () => {
     if (inputTask === '') {
       handleToggle();
@@ -33,6 +37,7 @@ const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
     setInputTask('');
   };
 
+  //modal의 open, close를 합니다.
   const handleToggle = () => {
     setModalOpen(!modalOpen);
   };
