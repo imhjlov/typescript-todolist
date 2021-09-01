@@ -12,17 +12,17 @@ const TodoContainer: React.FC = () => {
   const dispatch = useDispatch();
   const uncheckCount = todos.filter((todo) => !todo.isCheck);
 
-  const onLoad = () => {
-    dispatch(loadTodo());
-  };
   const onCreate = (Todo: Todo) => {
     dispatch(createTodo(Todo));
   };
 
   //데이터를 로드합니다.
   useEffect(() => {
+    const onLoad = () => {
+      dispatch(loadTodo());
+    };
     onLoad();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
