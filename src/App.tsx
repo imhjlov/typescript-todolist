@@ -1,7 +1,7 @@
 import TodoContainer from 'containers/TodoContainer';
 import React from 'react';
 
-const App: React.FC<any> = () => {
+const App: React.FC = () => {
   return (
     <div>
       <TodoContainer />
