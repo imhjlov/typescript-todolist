@@ -4,6 +4,9 @@ import { getTodoStorage, removeTodoStorage, saveTodoStorage } from 'utils/localS
 
 export const initialState: TodosState = [];
 export let nextIdState: number = 0;
+export const increamentNextId = () => {
+  nextIdState = nextIdState + 1;
+};
 
 function todos(state: TodosState = initialState, action: TodosAction): TodosState {
   switch (action.type) {
