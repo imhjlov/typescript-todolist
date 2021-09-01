@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Todo } from 'types';
 import Modal from 'components/common/Modal';
 import styled from 'styled-components';
-import { DATE_FORM } from 'utils/constants';
+
 import { increamentNextId, nextIdState } from 'modules/reducers/TodosReducer';
 
 interface TodoCreateProps {
@@ -12,7 +12,6 @@ interface TodoCreateProps {
 const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
   const [inputTask, setInputTask] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
-  const [date] = useState(new Date().toLocaleDateString('kr-KR', DATE_FORM));
 
   const handleSave = () => {
     handleCreate();
@@ -27,7 +26,7 @@ const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
       id: String(nextIdState),
       content: inputTask,
       isCheck: false,
-      createdAt: date,
+      createdAt: new Date(),
     };
     onCreate(todo);
     increamentNextId();
@@ -44,7 +43,7 @@ const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
 
   return (
     <>
-      <TodoCreateForm onSubmit={handleSave}>
+      <TodoCreateForm>
         <TodoName>
           <label htmlFor="taskName">할 일</label>
           <input
@@ -56,9 +55,7 @@ const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
           />
         </TodoName>
         <TodoControl>
-          <button type="button" onClick={handleSave}>
-            저장
-          </button>
+          <button onClick={handleSave}>저장</button>
         </TodoControl>
       </TodoCreateForm>
       <Modal modalOpen={modalOpen} handleToggle={handleToggle}>

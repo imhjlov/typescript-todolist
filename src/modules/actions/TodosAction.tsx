@@ -1,12 +1,7 @@
-import { LOAD_DATA, SAVE, CREATE, REMOVE, UPDATE, TOGGLE, TodosState, Todo } from 'types/index';
+import { LOAD_DATA, CREATE, REMOVE, UPDATE, TOGGLE, Todo } from 'types/index';
 
 export const loadTodo = () => ({
   type: LOAD_DATA,
-});
-
-export const saveTodo = (Todos: TodosState) => ({
-  type: SAVE,
-  payload: Todos,
 });
 
 export const createTodo = (Todo: Todo) => ({
@@ -31,7 +26,6 @@ export const toggleTodo = (id: string) => ({
 
 export type TodosAction =
   | ReturnType<typeof loadTodo>
-  | ReturnType<typeof saveTodo>
   | ReturnType<typeof createTodo>
   | ReturnType<typeof removeTodo>
   | ReturnType<typeof updateTodo>

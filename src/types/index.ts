@@ -2,7 +2,7 @@ export interface Todo {
   id: string;
   content: string | null;
   isCheck: boolean;
-  createdAt: string;
+  createdAt: Date;
 }
 
 export type TodosState = Todo[];

@@ -1,5 +1,5 @@
 import { TodosAction } from 'modules/actions/TodosAction';
-import { LOAD_DATA, SAVE, CREATE, REMOVE, UPDATE, TOGGLE, TodosState, Todo } from 'types/index';
+import { LOAD_DATA, CREATE, REMOVE, UPDATE, TOGGLE, TodosState, Todo } from 'types/index';
 import { getTodoStorage, removeTodoStorage, saveTodoStorage } from 'utils/localStorage';
 
 export const initialState: TodosState = [];
@@ -17,10 +17,6 @@ function todos(state: TodosState = initialState, action: TodosAction): TodosStat
       }
       saveTodoStorage(initialTodos);
       return initialTodos;
-    case SAVE:
-      const newSaveState = action.payload;
-      saveTodoStorage(newSaveState);
-      return newSaveState;
     case CREATE:
       const nextId = String(nextIdState + 1);
       const newState = state.concat({ ...action.payload, id: nextId });
