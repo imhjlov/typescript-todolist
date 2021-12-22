@@ -2,7 +2,6 @@
 
 ## 🔗 배포링크 
 
-[https://imhjlov.github.io/wanted-preonboarding-subject-9/index.html](https://imhjlov.github.io/wanted-preonboarding-subject-9/index.html)
 
 </br>
 
