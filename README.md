@@ -10,6 +10,8 @@
 
 ✔️ [Figma UI/UX 디자인](https://www.figma.com/file/ybvehpb9aW3I6Z8w2j72UD/TodoList?node-id=0%3A1)
 
+✔️ PostMan을 이용해 Mock-Server 생성
+
 ✔️ Typescript를 이용해 TodoList 기능 구현
 
 ✔️ redux를 이용해 TodoList 전역 상태관리
