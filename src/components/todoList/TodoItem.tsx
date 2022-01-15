@@ -2,13 +2,13 @@ import React, { useRef, useState, useEffect } from 'react';
 import { ReactComponent as DeleteSvg } from 'components/assets/svg/delete.svg';
 import { ReactComponent as EditSvg } from 'components/assets/svg/edit.svg';
 import { ReactComponent as CheckSvg } from 'components/assets/svg/check.svg';
-import { Todo } from 'types';
+import { TodoType } from 'types';
 import styled, { css } from 'styled-components';
 
 interface TodoItemProps {
-  todo: Todo;
+  todo: TodoType;
   onRemove: (id: string) => void;
-  onUpdate: (Todo: Todo) => void;
+  onUpdate: (Todo: TodoType) => void;
   onToggle: (id: string) => void;
 }
 
@@ -29,7 +29,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onRemove, onUpdate, onToggle 
     const updateText = updateTasKName.innerText;
 
     if (isEdit && updateText !== '') {
-      const updateTodo: Todo = {
+      const updateTodo: TodoType = {
         id: todo.id,
         content: updateText ? updateText : todo.content,
         isCheck: todo.isCheck,

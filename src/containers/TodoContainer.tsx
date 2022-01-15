@@ -5,14 +5,14 @@ import { createTodo, loadTodo } from 'modules/actions/TodosAction';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { Todo } from 'types';
+import { TodoType } from 'types';
 
 const TodoContainer: React.FC = () => {
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
   const uncheckCount = todos.filter((todo) => !todo.isCheck);
 
-  const onCreate = (Todo: Todo) => {
+  const onCreate = (Todo: TodoType) => {
     dispatch(createTodo(Todo));
   };
 

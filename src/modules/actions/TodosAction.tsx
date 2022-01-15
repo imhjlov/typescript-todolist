@@ -1,10 +1,10 @@
-import { LOAD_DATA, CREATE, REMOVE, UPDATE, TOGGLE, Todo } from 'types/index';
+import { LOAD_DATA, CREATE, REMOVE, UPDATE, TOGGLE, TodoType } from 'types/index';
 
 export const loadTodo = () => ({
   type: LOAD_DATA,
 });
 
-export const createTodo = (Todo: Todo) => ({
+export const createTodo = (Todo: TodoType) => ({
   type: CREATE,
   payload: Todo,
 });
@@ -14,7 +14,7 @@ export const removeTodo = (id: string) => ({
   payload: id,
 });
 
-export const updateTodo = (Todo: Todo) => ({
+export const updateTodo = (Todo: TodoType) => ({
   type: UPDATE,
   payload: Todo,
 });

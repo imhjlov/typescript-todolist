@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Todo } from 'types';
+import { TodoType } from 'types';
 import Modal from 'components/common/Modal';
 import styled from 'styled-components';
 
 import { increamentNextId, nextIdState } from 'modules/reducers/TodosReducer';
 
 interface TodoCreateProps {
-  onCreate: (Todo: Todo) => void;
+  onCreate: (Todo: TodoType) => void;
 }
 
 const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
@@ -26,7 +26,7 @@ const TodoCreate: React.FC<TodoCreateProps> = ({ onCreate }) => {
       handleToggle();
       return;
     }
-    const todo: Todo = {
+    const todo: TodoType = {
       id: String(nextIdState),
       content: inputTask,
       isCheck: false,

@@ -15,7 +15,7 @@ export const addTodoAPI = async (todo: TodoType) => {
   const response = await axiosCreate.post<TodoType[]>(`${END_POINT}`, {
     ...todo,
   });
-  return { msg: response.data.msg };
+  return { msg: response.data };
 };
 
 export const updateTodoAPI = async (todo: TodoType) => {
@@ -23,10 +23,10 @@ export const updateTodoAPI = async (todo: TodoType) => {
     id: todo.id,
     content: todo.content,
   });
-  return { msg: response.data.msg, result: response.content };
+  return { msg: response.data, result: response.data };
 };
 
 export const deleteTodoAPI = async (id: number) => {
   const response = await axiosCreate.delete<TodoType[]>(`${END_POINT}/${id}`);
-  return { msg: response.data.msg, result: id };
+  return { msg: response.data, result: id };
 };
