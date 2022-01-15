@@ -18,10 +18,9 @@ export const addTodoAPI = async (todo: TodoType) => {
   return { msg: response.data };
 };
 
-export const updateTodoAPI = async (todo: TodoType) => {
-  const response = await axiosCreate.put<TodoType[]>(`${END_POINT}/${todo.id}`, {
-    id: todo.id,
-    content: todo.content,
+export const updateTodoAPI = async (id: number, content: string) => {
+  const response = await axiosCreate.put<TodoType[]>(`${END_POINT}/${id}`, {
+    content: content,
   });
   return { msg: response.data, result: response.data };
 };
