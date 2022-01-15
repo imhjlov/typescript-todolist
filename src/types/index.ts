@@ -1,4 +1,4 @@
-export interface Todo {
+export interface TodoType {
   id: string;
   content: string | null;
   isCheck: boolean;

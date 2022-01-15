@@ -1,3 +1,5 @@
+export const END_POINT = '/todo';
+
 export const DATE_FORM: Intl.DateTimeFormatOptions = {
   year: 'numeric',
   weekday: 'long',
