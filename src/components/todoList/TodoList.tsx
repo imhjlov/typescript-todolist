@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoItem from 'components/todoList/TodoItem';
 import { removeTodo, toggleTodo, updateTodo } from 'modules/actions/TodosAction';
-import { Todo, TodosState } from 'types';
+import { TodoType, TodosState } from 'types';
 import { useDispatch } from 'react-redux';
 
 interface TodoListProps {
@@ -14,7 +14,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos }) => {
   const onRemove = (id: string) => {
     dispatch(removeTodo(id));
   };
-  const onUpdate = (Todo: Todo) => {
+  const onUpdate = (Todo: TodoType) => {
     dispatch(updateTodo(Todo));
   };
   const onToggle = (id: string) => {

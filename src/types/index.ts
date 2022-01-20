@@ -5,7 +5,7 @@ export interface TodoType {
   createdAt: Date;
 }
 
-export type TodosState = Todo[];
+export type TodosState = TodoType[];
 
 export const CREATE = 'CREATE' as const;
 export const REMOVE = 'REMOVE' as const;
