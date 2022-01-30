@@ -32,7 +32,7 @@ npm start
 
 </br>
 
-## 추가 구현해야 할 사항
+## 추가 구현해야 할 사항(진행중)
 
 - [x] 작동하지 않는 서버로 통신해야 하는 부분에서 방법을 찾다가 postman의 mockserver를 생성해 할 수 있겠다 싶어 생성 해뒀다. 이 mockserver를 통해 API 통신 하는 부분 구현이 필요하다. 안된다면 방법을 더 고민해 보아야 한다.
     - [x]  기업의 요구사항에 따라 [api 요청/응답하는 mock-server](https://documenter.getpostman.com/view/16332369/UVXhqc17)를 생성하였다.
