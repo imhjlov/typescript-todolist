@@ -1,4 +1,4 @@
-# 페이워크과제 - TodoList
+# mockserver와 redux를 이용한 TodoList
 
 </br>
 
@@ -14,6 +14,131 @@
 ✔️ redux를 이용해 TodoList 전역 상태관리
 
 ✔️ TodoList 목록 조회, 추가, 삭제, 수정 기능 구현
+
+</br>
+
+## ✍ API 명세
+
+<details markdown="1">
+<summary>[POST] Todo 만들기</summary>
+
+URL
+
+```
+../todo
+```
+
+request
+```
+{
+	"content": "string"
+}
+```
+
+response (200)
+```
+{
+	"msg": "string"
+}
+```
+</details>
+
+<details markdown="1">
+<summary>[GET] Todo 조회</summary>
+
+URL
+```
+../todo
+```
+request
+```
+{ }
+```
+response (200)
+```
+{
+  "count": 2, //integer
+  "todoList": [
+      {
+          "id": "string",
+          "content": "string",
+          "isCheck": true, //boolean
+          "createdAt": "2021-05-26T11:51:05.097Z"
+      },
+      {
+          "id": "string",
+          "content": "string",
+          "isCheck": false, //boolean
+          "createdAt": "2021-05-26T16:15:25.729Z"
+      }
+  ]
+}
+```
+</details>
+
+<details markdown="1">
+<summary>[POST] Todo 수정</summary>
+
+URL
+```
+../todo/:id
+```
+request
+```
+{
+	"content": "string"
+}
+```
+response (200)
+```
+{
+    "msg": "string",
+    "content": "string"
+}
+```
+</details>
+
+<details markdown="1">
+<summary>[POST] Todo 체크</summary>
+
+URL
+```
+../todo/:id
+```
+request
+```
+{
+	"isCheck": true //boolean
+}
+```
+response (200)
+```
+{
+	"msg": "string"
+}
+```
+</details>
+
+<details markdown="1">
+<summary>[POST] Todo 삭제</summary>
+
+URL
+```
+../todo/:id
+```
+request
+```
+{
+	
+}
+```
+response (200)
+```
+{
+	"msg": "string"
+}
+```
+</details>
 
 </br>
 
